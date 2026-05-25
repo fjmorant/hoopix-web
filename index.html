@@ -52,6 +52,7 @@
       height: 80px;
       background: var(--white);
       clip-path: ellipse(55% 100% at 50% 100%);
+      z-index: 2;
     }
 
     .hero-rings {
@@ -59,6 +60,7 @@
       inset: 0;
       pointer-events: none;
       overflow: hidden;
+      z-index: 1;
     }
     .ring {
       position: absolute;
@@ -75,6 +77,37 @@
       0%, 100% { transform: translateY(0); }
       50%       { transform: translateY(-18px); }
     }
+
+    /* ── CLOUDS ── */
+    /* Same 7-circle puff shape as the game, drifting right-to-left in 3 parallax layers */
+    .cloud-wrap {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .cloud {
+      position: absolute;
+      animation: cloud-drift linear infinite;
+    }
+
+    .cloud svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @keyframes cloud-drift {
+      from { left: 110%; }
+      to   { left: -20%; }
+    }
+
+    /* Hero content sits above cloud layer */
+    .hero .logo,
+    .hero .tagline,
+    .hero .store-btn { position: relative; z-index: 3; }
 
     .logo {
       font-family: 'ChalkboardSE-Bold', 'Chalkboard SE', 'Fredoka One', 'Comic Sans MS', cursive;
@@ -184,9 +217,12 @@
       background: linear-gradient(135deg, var(--sky2), #2a5faa);
       padding: 80px 24px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-    .cta .section-title { color: var(--white); }
-    .cta .section-sub   { color: rgba(255,255,255,0.80); }
+    .cta .section-title { color: var(--white); position: relative; z-index: 1; }
+    .cta .section-sub   { color: rgba(255,255,255,0.80); position: relative; z-index: 1; }
+    .cta .store-btn     { position: relative; z-index: 1; }
 
     /* ── FOOTER ── */
     footer {
@@ -205,6 +241,22 @@
 
   <!-- HERO -->
   <section class="hero">
+
+    <!-- Clouds: same 7-circle puff shape as the game, 3 parallax layers -->
+    <div class="cloud-wrap">
+      <!-- Far: small, faint, slow -->
+      <div class="cloud" style="top:8%;  width:88px;  opacity:.18; animation-duration:80s; animation-delay:-20s;"><svg viewBox="-64 -42 128 84" fill="white" xmlns="http://www.w3.org/2000/svg"><circle cx="0" cy="0" r="38"/><circle cx="-30" cy="6" r="26"/><circle cx="30" cy="6" r="26"/><circle cx="-16" cy="-12" r="22"/><circle cx="16" cy="-12" r="22"/><circle cx="-44" cy="14" r="16"/><circle cx="44" cy="14" r="16"/></svg></div>
+      <div class="cloud" style="top:50%; width:95px;  opacity:.19; animation-duration:75s; animation-delay:-40s;"><svg viewBox="-64 -42 128 84" fill="white" xmlns="http://www.w3.org/2000/svg"><circle cx="0" cy="0" r="38"/><circle cx="-30" cy="6" r="26"/><circle cx="30" cy="6" r="26"/><circle cx="-16" cy="-12" r="22"/><circle cx="16" cy="-12" r="22"/><circle cx="-44" cy="14" r="16"/><circle cx="44" cy="14" r="16"/></svg></div>
+      <div class="cloud" style="top:74%; width:82px;  opacity:.17; animation-duration:85s; animation-delay:-65s;"><svg viewBox="-64 -42 128 84" fill="white" xmlns="http://www.w3.org/2000/svg"><circle cx="0" cy="0" r="38"/><circle cx="-30" cy="6" r="26"/><circle cx="30" cy="6" r="26"/><circle cx="-16" cy="-12" r="22"/><circle cx="16" cy="-12" r="22"/><circle cx="-44" cy="14" r="16"/><circle cx="44" cy="14" r="16"/></svg></div>
+      <!-- Mid -->
+      <div class="cloud" style="top:22%; width:145px; opacity:.28; animation-duration:58s; animation-delay:-15s;"><svg viewBox="-64 -42 128 84" fill="white" xmlns="http://www.w3.org/2000/svg"><circle cx="0" cy="0" r="38"/><circle cx="-30" cy="6" r="26"/><circle cx="30" cy="6" r="26"/><circle cx="-16" cy="-12" r="22"/><circle cx="16" cy="-12" r="22"/><circle cx="-44" cy="14" r="16"/><circle cx="44" cy="14" r="16"/></svg></div>
+      <div class="cloud" style="top:60%; width:130px; opacity:.30; animation-duration:52s; animation-delay:-33s;"><svg viewBox="-64 -42 128 84" fill="white" xmlns="http://www.w3.org/2000/svg"><circle cx="0" cy="0" r="38"/><circle cx="-30" cy="6" r="26"/><circle cx="30" cy="6" r="26"/><circle cx="-16" cy="-12" r="22"/><circle cx="16" cy="-12" r="22"/><circle cx="-44" cy="14" r="16"/><circle cx="44" cy="14" r="16"/></svg></div>
+      <div class="cloud" style="top:36%; width:110px; opacity:.22; animation-duration:68s; animation-delay:-50s;"><svg viewBox="-64 -42 128 84" fill="white" xmlns="http://www.w3.org/2000/svg"><circle cx="0" cy="0" r="38"/><circle cx="-30" cy="6" r="26"/><circle cx="30" cy="6" r="26"/><circle cx="-16" cy="-12" r="22"/><circle cx="16" cy="-12" r="22"/><circle cx="-44" cy="14" r="16"/><circle cx="44" cy="14" r="16"/></svg></div>
+      <!-- Near: large, more visible, faster -->
+      <div class="cloud" style="top:14%; width:205px; opacity:.42; animation-duration:42s; animation-delay:-10s;"><svg viewBox="-64 -42 128 84" fill="white" xmlns="http://www.w3.org/2000/svg"><circle cx="0" cy="0" r="38"/><circle cx="-30" cy="6" r="26"/><circle cx="30" cy="6" r="26"/><circle cx="-16" cy="-12" r="22"/><circle cx="16" cy="-12" r="22"/><circle cx="-44" cy="14" r="16"/><circle cx="44" cy="14" r="16"/></svg></div>
+      <div class="cloud" style="top:55%; width:190px; opacity:.38; animation-duration:38s; animation-delay:-22s;"><svg viewBox="-64 -42 128 84" fill="white" xmlns="http://www.w3.org/2000/svg"><circle cx="0" cy="0" r="38"/><circle cx="-30" cy="6" r="26"/><circle cx="30" cy="6" r="26"/><circle cx="-16" cy="-12" r="22"/><circle cx="16" cy="-12" r="22"/><circle cx="-44" cy="14" r="16"/><circle cx="44" cy="14" r="16"/></svg></div>
+    </div>
+
     <div class="hero-rings">
       <div class="ring"></div>
       <div class="ring"></div>
@@ -269,6 +321,14 @@
 
   <!-- CTA -->
   <section class="cta">
+    <!-- Clouds in CTA section too -->
+    <div class="cloud-wrap">
+      <div class="cloud" style="top:10%; width:110px; opacity:.18; animation-duration:72s; animation-delay:-30s;"><svg viewBox="-64 -42 128 84" fill="white" xmlns="http://www.w3.org/2000/svg"><circle cx="0" cy="0" r="38"/><circle cx="-30" cy="6" r="26"/><circle cx="30" cy="6" r="26"/><circle cx="-16" cy="-12" r="22"/><circle cx="16" cy="-12" r="22"/><circle cx="-44" cy="14" r="16"/><circle cx="44" cy="14" r="16"/></svg></div>
+      <div class="cloud" style="top:55%; width:90px;  opacity:.16; animation-duration:82s; animation-delay:-55s;"><svg viewBox="-64 -42 128 84" fill="white" xmlns="http://www.w3.org/2000/svg"><circle cx="0" cy="0" r="38"/><circle cx="-30" cy="6" r="26"/><circle cx="30" cy="6" r="26"/><circle cx="-16" cy="-12" r="22"/><circle cx="16" cy="-12" r="22"/><circle cx="-44" cy="14" r="16"/><circle cx="44" cy="14" r="16"/></svg></div>
+      <div class="cloud" style="top:30%; width:160px; opacity:.26; animation-duration:55s; animation-delay:-18s;"><svg viewBox="-64 -42 128 84" fill="white" xmlns="http://www.w3.org/2000/svg"><circle cx="0" cy="0" r="38"/><circle cx="-30" cy="6" r="26"/><circle cx="30" cy="6" r="26"/><circle cx="-16" cy="-12" r="22"/><circle cx="16" cy="-12" r="22"/><circle cx="-44" cy="14" r="16"/><circle cx="44" cy="14" r="16"/></svg></div>
+      <div class="cloud" style="top:70%; width:200px; opacity:.35; animation-duration:40s; animation-delay:-28s;"><svg viewBox="-64 -42 128 84" fill="white" xmlns="http://www.w3.org/2000/svg"><circle cx="0" cy="0" r="38"/><circle cx="-30" cy="6" r="26"/><circle cx="30" cy="6" r="26"/><circle cx="-16" cy="-12" r="22"/><circle cx="16" cy="-12" r="22"/><circle cx="-44" cy="14" r="16"/><circle cx="44" cy="14" r="16"/></svg></div>
+    </div>
+
     <h2 class="section-title">Ready to hop?</h2>
     <p class="section-sub">Free to play. No ads during gameplay. Just pure fun.</p>
 
