@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support – Hoopix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Nunito', sans-serif; background: #f4f8ff; color: #1a2a4a; }
+    nav {
+      background: #3d7fd4;
+      padding: 16px 24px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    nav a { color: white; text-decoration: none; font-weight: 800; font-size: 20px; }
+    nav a:hover { opacity: 0.85; }
+    nav span { color: rgba(255,255,255,0.6); }
+    .container { max-width: 760px; margin: 0 auto; padding: 60px 24px; }
+    h1 { font-size: 36px; font-weight: 900; margin-bottom: 8px; }
+    .sub { color: #5a7a9a; margin-bottom: 48px; font-size: 18px; }
+    h2 { font-size: 20px; font-weight: 800; margin: 40px 0 16px; color: #3d7fd4; }
+    p  { line-height: 1.8; color: #3a4a6a; margin-bottom: 12px; }
+
+    .faq { display: flex; flex-direction: column; gap: 16px; }
+    .faq-item {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .faq-item h3 { font-size: 17px; font-weight: 800; color: #1a2a4a; margin-bottom: 8px; }
+    .faq-item p  { margin: 0; }
+
+    .contact-box {
+      background: #3d7fd4;
+      color: white;
+      border-radius: 24px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 48px;
+    }
+    .contact-box h2 { color: white; margin: 0 0 12px; font-size: 26px; }
+    .contact-box p  { color: rgba(255,255,255,0.85); margin-bottom: 24px; }
+    .contact-btn {
+      display: inline-block;
+      background: white;
+      color: #3d7fd4;
+      font-weight: 800;
+      font-size: 17px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.15s;
+    }
+    .contact-btn:hover { transform: translateY(-2px); }
+
+    footer {
+      text-align: center; padding: 32px 24px;
+      background: #1a2a4a; color: rgba(255,255,255,0.6);
+      font-size: 14px; margin-top: 60px;
+    }
+    footer a { color: rgba(255,255,255,0.8); margin: 0 12px; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/">Hoopix</a>
+  <span>/</span>
+  <span style="color:white;font-weight:700;">Support</span>
+</nav>
+
+<div class="container">
+  <h1>Support</h1>
+  <p class="sub">We're here to help! Check the FAQs below or reach out directly.</p>
+
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq">
+
+    <div class="faq-item">
+      <h3>How do I play Hoopix?</h3>
+      <p>Tap anywhere on the screen to make your character hop upward. Time your taps to fly through the gap in each spinning ring. Miss the gap and it's game over — see how many hoops you can get through!</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I change my character?</h3>
+      <p>From the main menu, tap the character portrait to open the character selector. You can choose from Cat, Dog, Bunny, Bear, Frog, and Panda.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I turn off the music or sound?</h3>
+      <p>Tap the speaker icon in the top corner during gameplay to toggle music and sound effects on or off.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>My purchase didn't go through — what should I do?</h3>
+      <p>All purchases are handled by Apple. Please check your Apple ID account for the transaction. If the issue persists, use the "Restore Purchases" button in the app, or contact Apple Support directly.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>The game is crashing — what should I try?</h3>
+      <p>First, close the app completely and reopen it. If that doesn't help, try restarting your device. Make sure your iOS is up to date. If the problem continues, please contact us — it really helps if you can describe what was happening when the crash occurred.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is Hoopix safe for kids?</h3>
+      <p>Yes! Hoopix is designed for all ages. We collect no personal data from children. Any ads shown are compliant with child-directed advertising policies. See our <a href="/privacy.html">Privacy Policy</a> for full details.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I request deletion of my data?</h3>
+      <p>We store very little data, and none of it is personally identifiable. If you'd like any analytics associated with your device removed, just contact us with your request and we'll take care of it promptly.</p>
+    </div>
+
+  </div>
+
+  <div class="contact-box">
+    <h2>Still need help?</h2>
+    <p>Send us an email and we'll get back to you as soon as possible.</p>
+    <a href="mailto:javier.morant84@gmail.com" class="contact-btn">Email Us</a>
+  </div>
+</div>
+
+<footer>
+  <div><a href="/">Home</a><a href="/privacy.html">Privacy Policy</a></div>
+  <p style="margin-top:12px;">&copy; 2026 Hoopix. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
